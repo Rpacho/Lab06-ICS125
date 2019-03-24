@@ -22,7 +22,7 @@ class ContractModel {
     private ArrayList<Contract> theContractsAll;
     private SortedSet<String> originCityList;
     private int contractCounter = 0;
-    String fileName = "M:\\ICS125\\Lab06\\SelectContract06\\contracts.txt";
+    String fileName = "M:\\ICS125\\Lab06\\Lab06-ICS125\\SelectContract06\\contracts.txt";
     
     
     
@@ -49,6 +49,7 @@ class ContractModel {
         }
         originCityList.add("All");
         fileReader.close();
+        
         theContractsAll = new ArrayList<>(theContracts);
         }catch(IOException ex){
         System.out.println(ex.getMessage());

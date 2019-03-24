@@ -17,7 +17,7 @@ import java.awt.event.ItemListener;
 class ContractController {
     ContractView theView;
     ContractModel theModel;
-
+    Contract theContract;
     ContractController(ContractView theView, ContractModel theModel) {
         this.theView = theView;
         this.theModel = theModel;
@@ -43,7 +43,7 @@ class ContractController {
             }else{
                 theView.setnextButton(false);
             }
-            if(theModel.getContractCount() > 1){
+            if(theModel.getContractCount() > 0){
                 Contract c = theModel.getTheContract();
                 theView.setContractID(c.getContractId());
                 theView.setDestCity(c.getDestCity());
@@ -114,14 +114,19 @@ class ContractController {
         
         @Override
         public void actionPerformed(ActionEvent e){
-            System.out.println("bugging_ bid");
-            /*try{
-                theModel.nextContract();
+            //System.out.println("bugging_ bid");
+            try{
+                ConfirmBid cb;
+                Contract theContract = theModel.getTheContract();
+                cb = new ConfirmBid(theView, true, theContract);
+                
+                cb.setLocationRelativeTo(null);
+                cb.setVisible(true);
             } catch (Exception ex) {
                 System.out.println(ex);
                 theView.displayErrorMessage(
                     "Error: There is a problem setting a previous contract.");
-            }*/
+            }
         }
     }
     
