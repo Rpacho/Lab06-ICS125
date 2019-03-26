@@ -159,7 +159,7 @@ public class ConfirmBid extends javax.swing.JDialog {
                     Writer fileWriter = new FileWriter("M:\\ICS125\\Lab06\\Lab06-ICS125\\SelectContract06\\output_bids.txt", true)
                 ){
                 fileWriter.write(jTextName.getText() + "," + jLabelContactID.getText()
-                + ","+formattedDate);
+                + ","+ jSpinner1.getValue() + ","+formattedDate);
                 fileWriter.write("\n");
                 fileWriter.close();
             }catch(IOException ex){
@@ -169,12 +169,12 @@ public class ConfirmBid extends javax.swing.JDialog {
                 
                 
                 
-            JOptionPane.showMessageDialog(null, "Your name as " + jTextName.getText() + " with bid $"
+            JOptionPane.showMessageDialog(this, "Your name as " + jTextName.getText() + " with bid $"
                     + jSpinner1.getValue() + ".00 has been successfully saved.");
             
             
         }else{
-            JOptionPane.showMessageDialog(null, "Incorrect Name Input Please Try Again!");
+            JOptionPane.showMessageDialog(this, "Incorrect Name Input Please Try Again!");
         }
         
     }//GEN-LAST:event_jButtonSaveActionPerformed
